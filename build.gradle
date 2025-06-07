@@ -1,7 +1,14 @@
+<build.gradle>
 plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'application'
 }
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -9,8 +16,18 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 application {
     mainClass = 'org.example.M2GExampleApplication'
 }
+
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = true
+}
+</build.gradle>
