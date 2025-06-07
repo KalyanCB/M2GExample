@@ -1,33 +1,19 @@
-<build.gradle>
-plugins {
-    id 'org.springframework.boot' version '2.5.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
-    id 'application'
-}
+The error message indicates that the Gradle Wrapper (gradlew) is missing from your project. The Gradle Wrapper is a shell script that automatically downloads and uses the correct version of Gradle for your project, and it should be included in your version control system.
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-sourceCompatibility = '17'
+However, the error message doesn't seem to be related to the content of your build.gradle file. The build.gradle file you provided seems to be correct.
 
-repositories {
-    mavenCentral()
-}
+You can generate the Gradle Wrapper by running the following command in your project directory:
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+```
+gradle wrapper
+```
 
-application {
-    mainClass = 'org.example.M2GExampleApplication'
-}
+This command will generate the necessary gradlew and gradlew.bat files, as well as the gradle/wrapper/gradle-wrapper.jar and gradle/wrapper/gradle-wrapper.properties files.
 
-bootJar {
-    enabled = true
-}
+After generating the Gradle Wrapper, you should be able to build your project with the following command:
 
-bootRun {
-    main = 'org.example.M2GExampleApplication'
-}
-</build.gradle>
+```
+./gradlew build
+```
+
+If you still encounter issues, please provide more details about your project structure and the exact steps you are taking to build your project.
