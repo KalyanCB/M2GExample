@@ -1,3 +1,16 @@
+The error message suggests that the Gradle Wrapper (gradlew) is missing from your project. However, the Gradle Wrapper is not included in the build.gradle file. It is a separate file that should be included in your project. 
+
+You can generate it by running the following command in your project directory:
+
+```
+gradle wrapper
+```
+
+This will generate the necessary `gradlew` and `gradlew.bat` files along with `gradle/wrapper/gradle-wrapper.jar` and `gradle/wrapper/gradle-wrapper.properties` in your project directory.
+
+After generating the Gradle Wrapper, your build.gradle file should work as expected and it should look like this:
+
+```groovy
 plugins {
     id 'org.springframework.boot' version '2.5.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -24,3 +37,6 @@ bootJar {
 jar {
     enabled = true
 }
+```
+
+Please note that the versions of the plugins and dependencies may need to be updated to match those in your Maven pom.xml file.
