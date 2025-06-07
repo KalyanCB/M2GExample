@@ -1,12 +1,14 @@
-# Ignore Java class files
-*.class
+# Gradle
+    .gradle/
+    build/
+    !gradle-wrapper.jar
 
-# Maven build output
-/target/
+    # Java
+    *.class
 
-# IntelliJ project files
-.idea/
-*.iml
+    # IntelliJ
+    .idea/
+    *.iml
 
-# Logs
-*.log
+    # Logs
+    *.log
