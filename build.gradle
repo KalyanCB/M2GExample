@@ -1,3 +1,10 @@
+The error message indicates that the Gradle Wrapper (gradlew) is not found. This is not an issue with the build.gradle file itself, but rather with the project setup. The Gradle Wrapper should be included in the project repository to ensure that everyone working on the project uses the same Gradle version.
+
+However, if we assume that the error is related to the build.gradle file, the content of the file seems correct and should not cause the "No such file or directory: 'repo/gradlew'" error. 
+
+Here is the build.gradle file content:
+
+```groovy
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.5.3'
@@ -25,3 +32,12 @@ application {
 bootJar {
     enabled = true
 }
+```
+
+To resolve the error, you should ensure that the Gradle Wrapper is properly included in your project. If it's not, you can generate it using the following command in your project directory:
+
+```bash
+gradle wrapper
+```
+
+This will generate the necessary gradlew and gradlew.bat files, along with the gradle/wrapper/gradle-wrapper.jar and gradle/wrapper/gradle-wrapper.properties files.
