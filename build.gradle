@@ -1,9 +1,7 @@
-<build.gradle>
 plugins {
     id 'org.springframework.boot' version '2.5.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'application'
 }
 
 group = 'org.example'
@@ -19,10 +17,6 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-application {
-    mainClass = 'org.example.M2GExampleApplication'
-}
-
 bootJar {
     enabled = true
 }
@@ -30,4 +24,3 @@ bootJar {
 jar {
     enabled = true
 }
-</build.gradle>
